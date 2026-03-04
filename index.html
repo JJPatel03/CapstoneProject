@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PP-Translate</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+        <div class="logo">PP-Translate</div>
+
+        <ul class="nav-links">
+            <li>How it Works?</li>
+            <li>Theme</li>
+            <li><a href="https://github.com/JJPatel03/CapstoneProject">GitHub</a></li>
+            <li>About</li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- TITLE -->
+<section class="title-section">
+    <h1>Power-Point Translator</h1>
+    <p>Upload a PowerPoint and translate it into another language</p>
+</section>
+
+
+<!-- MAIN PANEL -->
+<section class="main-panel">
+
+    <!-- TOP LANGUAGE SELECT -->
+    <div class="language-row">
+
+        <select id="sourceLang">
+            <option>Original PowerPoint Language: English</option>
+            <option>Spanish</option>
+            <option>French</option>
+        </select>
+
+        <select id="targetLang">
+            <option>Translate To: Spanish</option>
+            <option>English</option>
+            <option>French</option>
+        </select>
+
+    </div>
+
+
+    <!-- BOTTOM GRID -->
+    <div class="grid-container">
+
+        <!-- LEFT SIDE (UPLOAD) -->
+        <div class="upload-box">
+
+            <input type="file" id="fileInput" hidden>
+
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                +
+            </button>
+
+            <p>Upload PowerPoint</p>
+
+        </div>
+
+
+        <!-- RIGHT SIDE (ACTIONS) -->
+        <div class="action-box">
+
+            <button id="translateBtn">Translate File</button>
+
+            <button id="viewBtn" class="hidden">View Document</button>
+
+            <button id="downloadBtn" class="hidden">Download Document</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
