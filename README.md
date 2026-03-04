@@ -1,2 +1,4 @@
 # CapstoneProject
 Web application for translating documents into other languages
+
+PP-Translate is a web-based application that automatically translates PowerPoint presentations into different languages using AI. Users can upload .pptx or .pdf slide decks, choose the source and target languages, and receive a fully translated presentation while preserving the original slide layout, formatting, and styling. The system uses a frontend built with HTML, CSS, and JavaScript, a backend powered by Python and FastAPI, and integrates with Google Cloud Translation API for accurate AI-driven translations. Supabase is used for authentication, storage, and database management, allowing users to securely manage and view their translation history. This project demonstrates the integration of modern web technologies, cloud services, and AI to simplify the process of creating multilingual presentations.
