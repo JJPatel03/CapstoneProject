@@ -1,0 +1,249 @@
+<!--
+  Document Translator — Frontend
+  Upload .pptx/.pdf files, choose languages, translate and download.
+-->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upload a PowerPoint file, choose languages, and download a translated deck while keeping the slide layout intact.">
+  <title>Document Translator</title>
+  <link rel="icon" href="images/DT(transparent background).PNG" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__container">
+      <a href="/" class="nav__brand" aria-label="Document Translator home">
+        <img src="images/DT(transparent background).PNG" alt="" class="nav__logo" width="52" height="52">
+      </a>
+      <div class="nav__links">
+        <a href="#" class="nav__link" data-modal="how-modal">How it Works?</a>
+        <a href="#" class="nav__link" data-modal="about-modal">About</a>
+        <a href="https://github.com/JJPatel03/CapstoneProject" class="nav__link" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button id="theme-toggle" class="nav__theme-btn" type="button" aria-label="Toggle theme">
+          <svg class="icon icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <h1 class="hero__title">Document Translator</h1>
+      <p class="hero__subtitle">Upload a file, choose languages, and download a translated deck while keeping the slide layout intact.</p>
+    </section>
+
+    <!-- ── Language Panel ── -->
+    <section class="language-panel card" aria-label="Language selection">
+      <div class="language-panel__grid">
+        <div class="language-panel__group">
+          <label for="source-lang" class="label">Source language</label>
+          <select id="source-lang" class="select">
+            <option value="ar">Arabic</option>
+            <option value="bn">Bengali</option>
+            <option value="zh-CN">Chinese (Simplified)</option>
+            <option value="zh-TW">Chinese (Traditional)</option>
+            <option value="cs">Czech</option>
+            <option value="da">Danish</option>
+            <option value="nl">Dutch</option>
+            <option value="en" selected>English</option>
+            <option value="fi">Finnish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="el">Greek</option>
+            <option value="he">Hebrew</option>
+            <option value="hi">Hindi</option>
+            <option value="hu">Hungarian</option>
+            <option value="id">Indonesian</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ms">Malay</option>
+            <option value="no">Norwegian</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="ro">Romanian</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="sv">Swedish</option>
+            <option value="ta">Tamil</option>
+            <option value="th">Thai</option>
+            <option value="tr">Turkish</option>
+            <option value="uk">Ukrainian</option>
+            <option value="ur">Urdu</option>
+            <option value="vi">Vietnamese</option>
+          </select>
+        </div>
+
+        <button id="swap-btn" class="swap-btn" type="button" aria-label="Swap languages">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </button>
+
+        <div class="language-panel__group">
+          <label for="target-lang" class="label">Target language</label>
+          <select id="target-lang" class="select">
+            <option value="ar">Arabic</option>
+            <option value="bn">Bengali</option>
+            <option value="zh-CN">Chinese (Simplified)</option>
+            <option value="zh-TW">Chinese (Traditional)</option>
+            <option value="cs">Czech</option>
+            <option value="da">Danish</option>
+            <option value="nl">Dutch</option>
+            <option value="en">English</option>
+            <option value="fi">Finnish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="el">Greek</option>
+            <option value="he">Hebrew</option>
+            <option value="hi">Hindi</option>
+            <option value="hu">Hungarian</option>
+            <option value="id">Indonesian</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ms">Malay</option>
+            <option value="no">Norwegian</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="ro">Romanian</option>
+            <option value="ru">Russian</option>
+            <option value="es" selected>Spanish</option>
+            <option value="sv">Swedish</option>
+            <option value="ta">Tamil</option>
+            <option value="th">Thai</option>
+            <option value="tr">Turkish</option>
+            <option value="uk">Ukrainian</option>
+            <option value="ur">Urdu</option>
+            <option value="vi">Vietnamese</option>
+          </select>
+        </div>
+      </div>
+      <p class="language-panel__hint"><strong>Supported:</strong> .pptx, .pdf &nbsp; <strong>Max size:</strong> 25 MB</p>
+    </section>
+
+    <!-- ── Main Grid ── -->
+    <section class="main-grid">
+
+      <!-- Upload Card -->
+      <div class="card upload-card">
+        <div class="card__header">
+          <h2 class="card__title">Upload</h2>
+          <p class="card__subtitle">Browse for file.</p>
+        </div>
+
+        <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Drop file here or click to browse">
+          <div class="dropzone__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <p class="dropzone__text">Drop file here</p>
+        </div>
+        <input type="file" id="file-input" accept=".pptx,.pdf" multiple hidden aria-hidden="true">
+
+        <div class="file-deck">
+          <p class="file-deck__label"><strong>File deck</strong> <span class="text-muted">(Max: 10 files)</span></p>
+          <p class="file-deck__hint">List of uploaded files</p>
+          <div id="file-list" class="file-list">
+            <div class="file-card file-card--empty">
+              <div class="file-card__info">
+                <span class="file-card__name">No file selected</span>
+                <span class="file-card__meta">Upload a file</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Translate Card -->
+      <div class="card translate-card">
+        <div class="card__header">
+          <h2 class="card__title">Translate</h2>
+          <p class="card__subtitle">Start translation and download the translated deck.</p>
+        </div>
+
+        <button id="translate-btn" class="btn btn--primary btn--full" type="button" disabled>Translate</button>
+
+        <div class="status-panel panel">
+          <span class="panel__label">Status</span>
+          <span id="status-text" class="status-pill" data-status="idle">Waiting</span>
+        </div>
+
+        <div class="results-panel panel" aria-live="polite">
+          <strong class="panel__title">Results</strong>
+          <div class="results-panel__rows">
+            <div class="results-panel__row">
+              <span class="results-panel__key">Time:</span>
+              <span id="result-time" class="results-panel__val">0s</span>
+            </div>
+            <div class="results-panel__row">
+              <span class="results-panel__key"># of successful translations:</span>
+              <span id="result-count" class="results-panel__val">0/0</span>
+            </div>
+            <div class="results-panel__row">
+              <span class="results-panel__key">Languages:</span>
+              <span id="result-langs" class="results-panel__val">N/A</span>
+            </div>
+          </div>
+          <div class="results-panel__actions">
+            <button id="download-btn" class="btn btn--primary btn--sm" type="button" disabled>Download</button>
+            <button id="preview-btn" class="btn btn--ghost btn--sm" type="button" disabled>Preview</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <p>&copy; 2026 Document Translator</p>
+  </footer>
+
+  <!-- ── How it Works Modal ── -->
+  <div class="modal-overlay" id="how-modal" aria-hidden="true" role="dialog" aria-labelledby="how-modal-title">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+      <div class="modal__icons" aria-hidden="true">
+        <img src="images/Logo.PNG" alt="" width="100" height="100">
+        <img src="images/Logo.PNG" alt="" width="100" height="100">
+        <img src="images/Logo.PNG" alt="" width="100" height="100">
+      </div>
+      <ol class="modal__steps">
+        <li>Upload your <strong>.pptx</strong> or <strong>.pdf</strong> document using the drag-and-drop area or the file browser.</li>
+        <li>Select the source language of your document and the target language you want to translate into.</li>
+        <li>Click the <strong>Translate</strong> button to start the AI-powered translation process.</li>
+        <li>The system extracts text from each slide while mapping its position and formatting.</li>
+        <li>Google Cloud Translation API processes the text, preserving context and grammar.</li>
+        <li>Download your fully translated document with the original slide layout intact.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── About Modal ── -->
+  <div class="modal-overlay" id="about-modal" aria-hidden="true" role="dialog" aria-labelledby="about-modal-title">
+    <div class="modal">
+      <button class="modal__close" type="button" aria-label="Close">&times;</button>
+      <div class="modal__heading">
+        <h2 id="about-modal-title" class="modal__title">About</h2>
+        <img src="images/DT(transparent background).PNG" alt="DT" class="modal__logo" width="52" height="52">
+      </div>
+      <div class="modal__body">
+        <p>Document Translator is a web application that translates PowerPoint presentations into other languages using AI-powered translation. It preserves the original slide layout, fonts, colors, and formatting — only replacing the text content.</p>
+        <p>Built with a FastAPI backend and Google Cloud Translation API, it supports a wide range of languages and handles structured slide content with precision, making it ideal for students, educators, and professionals who need multilingual presentations.</p>
+        <p>This project was created as part of the CSC 4351 Capstone course by Adwaita Boralkar, Jaelany Glasgow, Jay Patel, and Mohamed Sharif.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
